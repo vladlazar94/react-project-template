@@ -4,6 +4,7 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 const config: Webpack.Configuration = {
+    target: "web",
     mode: "production",
     entry: path.resolve(__dirname, "src", "main.ts"),
     output: {
