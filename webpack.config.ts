@@ -1,6 +1,7 @@
 import path from "path";
 import Webpack from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 const config: Webpack.Configuration = {
     mode: "development",
@@ -18,13 +19,34 @@ const config: Webpack.Configuration = {
             {
                 test: /\.(t|j)sx?$/,
                 exclude: /node_modules/,
-                use: [{ loader: "ts-loader" }],
+                use: [
+                    {
+                        loader: "@linaria/webpack-loader",
+                        options: { sourceMap: true },
+                    },
+                    { loader: "ts-loader" },
+                ],
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                    },
+                    {
+                        loader: "css-loader",
+                        options: { sourceMap: true },
+                    },
+                ],
             },
         ],
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, "static", "index.html"),
+        }),
+        new MiniCssExtractPlugin({
+            filename: "[name].[contenthash].css",
         }),
     ],
 };

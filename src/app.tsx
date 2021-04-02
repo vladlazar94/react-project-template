@@ -1,10 +1,15 @@
-import React, { FunctionComponent } from "react";
+import React from "react";
 import { render } from "react-dom";
+import { css } from "linaria";
 
 export function renderApp(): void {
     render(<App />, document.getElementById("react-app-root"));
 }
 
-const App: FunctionComponent = function () {
-    return <div>Hello!</div>;
-};
+function App() {
+    return <div className={styles}>Hello!</div>;
+}
+
+const styles = css`
+    background-color: pink;
+`;
