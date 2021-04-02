@@ -8,7 +8,7 @@ const config: Webpack.Configuration = {
     devtool: "cheap-module-source-map",
     entry: path.resolve(__dirname, "src", "main.ts"),
     output: {
-        filename: "[name].bundle.js",
+        filename: "[name].js",
         path: path.resolve(__dirname, "dist"),
     },
     resolve: {
@@ -47,7 +47,7 @@ const config: Webpack.Configuration = {
             favicon: path.resolve(__dirname, "static", "hammer.png"),
         }),
         new MiniCssExtractPlugin({
-            filename: "[name].[contenthash].css",
+            filename: "[name].css",
         }),
     ],
 };

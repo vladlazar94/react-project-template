@@ -7,11 +7,15 @@ const config: Webpack.Configuration = {
     mode: "production",
     entry: path.resolve(__dirname, "src", "main.ts"),
     output: {
-        filename: "[name].bundle.js",
+        filename: "[name].[contenthash].js",
         path: path.resolve(__dirname, "dist"),
     },
     resolve: {
         extensions: [".ts", ".tsx", ".js", "jsx"],
+    },
+    performance: {
+        hints: "error",
+        maxEntrypointSize: 5000,
     },
     module: {
         rules: [
