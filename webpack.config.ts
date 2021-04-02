@@ -5,8 +5,11 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 const config: Webpack.Configuration = {
     mode: "development",
     devtool: "cheap-module-source-map",
-    entry: path.resolve(__dirname, "src", "main.tsx"),
-    output: { path: path.resolve(__dirname, "dist") },
+    entry: path.resolve(__dirname, "src", "main.ts"),
+    output: {
+        filename: "[name].bundle.js",
+        path: path.resolve(__dirname, "dist"),
+    },
     resolve: {
         extensions: [".ts", ".tsx", ".js", "jsx"],
     },
