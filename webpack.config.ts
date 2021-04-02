@@ -44,6 +44,7 @@ const config: Webpack.Configuration = {
     plugins: [
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, "static", "index.html"),
+            favicon: path.resolve(__dirname, "static", "hammer.png"),
         }),
         new MiniCssExtractPlugin({
             filename: "[name].[contenthash].css",
