@@ -34,6 +34,7 @@
         "eslint-plugin-functional": "^3.2.1",
         "eslint-plugin-react": "^7.23.1",
         "html-webpack-plugin": "^5.3.1",
+        "husky": "^6.0.0",
         "jest": "^26.6.3",
         "linaria": "^2.1.0",
         "mini-css-extract-plugin": "^1.4.0",
@@ -52,9 +53,19 @@
         "react": "^17.0.2",
         "react-dom": "^17.0.2"
     },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*": "prettier --write",
+        "*.{ts,tsx}": "eslint --fix"
+    },
     "scripts": {
         "dev": "cross-env TS_NODE_PROJECT=\"tsconfig.webpack.json\" webpack serve --config webpack.dev.ts",
         "build": "cross-env TS_NODE_PROJECT=\"tsconfig.webpack.json\" webpack --config webpack.prod.ts",
-        "test": "jest"
+        "test": "jest",
+        "prepare": "husky install"
     }
 }
