@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { render } from "react-dom";
 import { css } from "linaria";
 
@@ -7,7 +7,15 @@ export function renderDesktopApp(): void {
 }
 
 function App() {
-    return <div className={styles}>Desktop App</div>;
+    const [state, setState] = useState(0);
+
+    return (
+        <div className={styles}>
+            Desktop App
+            <span>{state}</span>
+            <button onClick={() => setState(state + 1)}>Click</button>
+        </div>
+    );
 }
 
 const styles = css`

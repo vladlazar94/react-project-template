@@ -1,5 +1,6 @@
 import path from "path";
 import Webpack from "webpack";
+import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
@@ -10,6 +11,7 @@ const config: Webpack.Configuration = {
     output: {
         filename: "[name].[contenthash].js",
         path: path.resolve(__dirname, "dist"),
+        clean: true,
     },
     resolve: {
         extensions: [".ts", ".tsx", ".js", "jsx"],
@@ -49,12 +51,18 @@ const config: Webpack.Configuration = {
         ],
     },
     plugins: [
+        new Webpack.ProgressPlugin(),
+        new Webpack.CleanPlugin(),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, "static", "index.html"),
             favicon: path.resolve(__dirname, "static", "hammer.png"),
         }),
         new MiniCssExtractPlugin({
             filename: "[name].[contenthash].css",
+        }),
+        new BundleAnalyzerPlugin({
+            analyzerMode: "static",
+            defaultSizes: "gzip",
         }),
     ],
 };

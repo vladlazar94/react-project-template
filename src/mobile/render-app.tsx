@@ -12,5 +12,5 @@ function App() {
 
 const styles = css`
     background-color: blue;
-    margin-top: calc(1em + 2em);
+    margin-top: calc(1em + 3em);
 `;

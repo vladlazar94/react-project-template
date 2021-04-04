@@ -7,10 +7,15 @@ const config: Webpack.Configuration = {
     target: "web",
     mode: "development",
     devtool: "cheap-module-source-map",
+    devServer: {
+        hot: true,
+        open: true,
+    },
     entry: path.resolve(__dirname, "src", "main.ts"),
     output: {
         filename: "[name].js",
         path: path.resolve(__dirname, "dist"),
+        clean: true,
     },
     resolve: {
         extensions: [".ts", ".tsx", ".js", "jsx"],
@@ -46,6 +51,9 @@ const config: Webpack.Configuration = {
         ],
     },
     plugins: [
+        new Webpack.ProgressPlugin(),
+        new Webpack.CleanPlugin(),
+        new Webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, "static", "index.html"),
             favicon: path.resolve(__dirname, "static", "hammer.png"),
