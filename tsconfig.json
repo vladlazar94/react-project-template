@@ -25,6 +25,7 @@
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,
         "preserveSymlinks": true /* Do not resolve the real path of symlinks. */,
+        "allowJs": false,
 
         /* Source Map Options */
         "sourceRoot": "" /* Specify the location where debugger should locate TypeScript files instead of source locations. */,
