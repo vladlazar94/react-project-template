@@ -55,7 +55,7 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "echo [Husky] pre-commit"
+            "pre-commit": "echo [Husky] agiagiagioap pre-commit"
         }
     },
     "lint-staged": {
