@@ -23,7 +23,10 @@ const config: Webpack.Configuration = {
                 use: [
                     {
                         loader: "@linaria/webpack-loader",
-                        options: { sourceMap: true },
+                        options: {
+                            sourceMap: true,
+                            displayName: true,
+                        },
                     },
                     { loader: "ts-loader" },
                 ],
