@@ -53,11 +53,6 @@
         "react": "^17.0.2",
         "react-dom": "^17.0.2"
     },
-    "husky": {
-        "hooks": {
-            "pre-commit": "echo [Husky] agiagiagioap pre-commit"
-        }
-    },
     "lint-staged": {
         "*": "prettier --write",
         "*.{ts,tsx}": "eslint --fix"
@@ -66,6 +61,7 @@
         "dev": "cross-env TS_NODE_PROJECT=\"tsconfig.webpack.json\" webpack serve --config webpack.dev.ts",
         "build": "cross-env TS_NODE_PROJECT=\"tsconfig.webpack.json\" webpack --config webpack.prod.ts",
         "test": "jest",
+        "lint": "eslint --fix",
         "prepare": "husky install"
     }
 }
