@@ -3,6 +3,7 @@ import Webpack from "webpack";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import { GenerateSW } from "workbox-webpack-plugin";
 
 const config: Webpack.Configuration = {
     target: "web",
@@ -63,6 +64,23 @@ const config: Webpack.Configuration = {
         new BundleAnalyzerPlugin({
             analyzerMode: "static",
             defaultSizes: "gzip",
+            openAnalyzer: false,
+            analyzerPort: 8888,
+        }),
+        new GenerateSW({
+            swDest: "service-worker.js",
+            include: [],
+            cleanupOutdatedCaches: true,
+            runtimeCaching: [
+                {
+                    urlPattern: /\.(?:js|css)$/,
+                    handler: "CacheFirst",
+                    options: {
+                        cacheName: "JsAndCss",
+                        expiration: { maxEntries: 30 },
+                    },
+                },
+            ],
         }),
     ],
 };

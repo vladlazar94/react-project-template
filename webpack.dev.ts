@@ -4,6 +4,7 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 const config: Webpack.Configuration = {
+    name: "Main App",
     target: "web",
     mode: "development",
     devtool: "cheap-module-source-map",
