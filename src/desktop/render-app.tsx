@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { render } from "react-dom";
 import { css } from "linaria";
 
-export function renderDesktopApp(): void {
+function renderDesktopApp(): void {
     render(<App />, document.getElementById("react-app-root"));
 }
 
@@ -25,3 +25,5 @@ const styles = css`
         background-color: pink;
     }
 `;
+
+export { renderDesktopApp };

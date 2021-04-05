@@ -2,3 +2,4 @@ dist
 node_modules
 .linaria-cache
 .vscode
+yarn-error.log

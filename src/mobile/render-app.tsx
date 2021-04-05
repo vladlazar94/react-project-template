@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "react-dom";
 import { css } from "linaria";
 
-export function renderMobileApp(): void {
+function renderMobileApp(): void {
     render(<App />, document.getElementById("react-app-root"));
 }
 
@@ -14,3 +14,5 @@ const styles = css`
     background-color: blue;
     margin-top: calc(1em + 3em);
 `;
+
+export { renderMobileApp };
