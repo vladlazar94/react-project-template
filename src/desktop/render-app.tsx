@@ -19,5 +19,9 @@ function App() {
 }
 
 const styles = css`
-    background-color: pink;
+    background-color: darkorange;
+
+    @media (prefers-color-scheme: dark) {
+        background-color: pink;
+    }
 `;
