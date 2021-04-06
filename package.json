@@ -54,6 +54,7 @@
             "@typescript-eslint",
             "react",
             "functional",
+            "unicorn",
             "import"
         ],
         "rules": {
@@ -63,13 +64,20 @@
             "functional/no-method-signature": "error",
             "functional/prefer-type-literal": "error",
             "functional/prefer-tacit": "error",
+            "unicorn/explicit-length-check": "error",
+            "unicorn/better-regex": "error",
+            "unicorn/consistent-destructuring": "error",
+            "unicorn/filename-case": [
+                "error",
+                {
+                    "case": "kebabCase"
+                }
+            ],
             "import/no-cycle": "error",
             "import/no-unused-modules": "error",
             "import/no-dynamic-require": "error",
             "import/no-self-import": "error",
-            "import/no-internal-modules": "error",
             "import/no-useless-path-segments": "error",
-            "import/no-relative-parent-imports": "error",
             "import/no-extraneous-dependencies": "error",
             "import/first": "error",
             "import/exports-last": "error",
@@ -77,7 +85,27 @@
             "import/no-namespace": "error",
             "import/newline-after-import": "error",
             "import/no-default-export": "error",
-            "import/group-exports": "error"
+            "import/group-exports": "error",
+            "import/order": [
+                "error",
+                {
+                    "newlines-between": "always",
+                    "groups": [
+                        [
+                            "builtin",
+                            "external"
+                        ],
+                        [
+                            "parent",
+                            "sibling"
+                        ]
+                    ],
+                    "alphabetize": {
+                        "order": "asc",
+                        "caseInsensitive": true
+                    }
+                }
+            ]
         }
     },
     "lint-staged": {
@@ -106,6 +134,7 @@
         "eslint-plugin-functional": "^3.2.1",
         "eslint-plugin-import": "^2.22.1",
         "eslint-plugin-react": "^7.23.1",
+        "eslint-plugin-unicorn": "^29.0.0",
         "html-webpack-plugin": "^5.3.1",
         "husky": "^6.0.0",
         "jest": "^26.6.3",

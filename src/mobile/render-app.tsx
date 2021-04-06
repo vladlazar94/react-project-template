@@ -1,6 +1,6 @@
+import { css } from "linaria";
 import React from "react";
 import { render } from "react-dom";
-import { css } from "linaria";
 
 function renderMobileApp(): void {
     render(<App />, document.getElementById("react-app-root"));

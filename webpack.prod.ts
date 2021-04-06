@@ -1,8 +1,8 @@
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import path from "path";
 import Webpack from "webpack";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { GenerateSW } from "workbox-webpack-plugin";
 
 const config: Webpack.Configuration = {

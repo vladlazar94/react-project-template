@@ -1,7 +1,7 @@
-import path from "path";
-import Webpack from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import path from "path";
+import Webpack from "webpack";
 
 const config: Webpack.Configuration = {
     name: "Main App",
